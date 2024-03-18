@@ -7,7 +7,7 @@ var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.6.3.min.js'; // Check https://jquery.com/ for the current version
 document.getElementsByTagName('head')[0].appendChild(script);
 
-newStudent.addEventListener("click",createNewRow());
+newStudent.addEventListener("click",createNewRow);
 
 
 
@@ -22,7 +22,8 @@ function calAvg(n){
             tot+=parseInt(b[i].value);
         }
     }
-    document.getElementById(n+"f").innerText=tot/5+"%";
+    finGrade(n,tot);
+    
     //console.log(tot);
 }
 
@@ -78,6 +79,7 @@ function createNewRow(){
     const td4=document.createElement("td");
     td4.innerText="-"; 
     td4.setAttribute("id",stidn+"f");
+    td4.classList.add("ovrs");
     row.appendChild(td4);
     stidn++;
     
@@ -85,4 +87,21 @@ function createNewRow(){
     //gradet.setAttribute("contenteditable","true");
     document.getElementById("table1").appendChild(row);
 
+}
+
+function changeMrk(){
+
+}
+
+function finGrade(n,t){
+    var tot=t/5;
+    if(tot<60){
+        document.getElementById(n+"f").classList.remove("ovrs");
+        document.getElementById(n+"f").classList.add("unds");
+    }
+    else{
+        document.getElementById(n+"f").classList.remove("unds");
+        document.getElementById(n+"f").classList.add("ovrs");
+    }
+    document.getElementById(n+"f").innerText=t/5+"%";
 }
