@@ -1,7 +1,9 @@
 
 var newStudent=document.getElementById("nstu");
-var stidn=10;
+var stidn=0;
 var rn=0;
+const fts=["Adam Smith", "John Doe", "Kate Bush", "Kayah Rooijens", "Newt Simmons", "Lloyd Winters", "Fyodor Chistyakov", "Jim Bloggs", "Cory Doctorow", "Kari Byron"];
+const fti=["0000","1111","2222","3333","4444","5555","6666","7777","8888","9999"];
 const ntl=['a','b','c','d','e'];
 var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.6.3.min.js'; // Check https://jquery.com/ for the current version
@@ -9,14 +11,18 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 newStudent.addEventListener("click",createNewRow);
 
-
+function onl(){
+    for(let i=0;i<10;i++){
+        createNewRow();
+    }
+}
 
 function calAvg(n){
     var b=document.getElementsByName(n);
     var tot=0;
     for(let i=0;i<5;i++){
         if(isNaN(parseInt(b[i].value)) | parseInt(b[i].value)>100 | parseInt(b[i].value)<0){
-            console.log(n+ntl[i]);
+            //console.log(n+ntl[i]);
             document.getElementById(n+ntl[i]).innerText="";     //doesnt work
         }else{
             tot+=parseInt(b[i].value);
@@ -43,8 +49,17 @@ function aatr1(n){
 }
 
 function createNewRow(){
-    const sname =document.getElementById("name").value;
-    const sid=document.getElementById("id").value;
+    var pn;
+    var pi;
+    if(stidn<10){
+        pn=fts[stidn];
+        pi=fti[stidn];
+    }else{
+        pn =document.getElementById("name").value;
+        pi=document.getElementById("id").value;
+    }
+    const sname=pn;
+    const sid=pi;
     const row=document.createElement("tr");
     const td1=document.createElement("td");
     
