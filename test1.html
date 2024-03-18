@@ -13,6 +13,10 @@
         input{
             text-align: right;
         }
+        .bsmb{
+            background-color: white;
+            text-align: right;
+        }
         .unds{
             background-color: red;
             color: white;
@@ -23,18 +27,22 @@
             color:black;
             text-align: right;
         }
+        .unsb{
+            background-color: yellow;
+            text-align: center;
+        }
 
     </style>
     
 </head>
 <body onload="onl()">
-    <h2> NEW TABLE</h2>
+    <h2> Assignment Grades</h2>
     <button type="button" id="nstu"> new student</button>
     <form>
         <label for="name">Student Name:</label><br>
         <input type="text" id="name" name="name" value="Adam Smith"><br>
         <label for="id">Student ID:</label><br>
-        <input type="text" id="id" name="id" value="111"><br><br>
+        <input type="text" id="id" name="id" value="1212"><br><br>
       </form>
 <table id="table1">
     <tr>
@@ -45,9 +53,10 @@
         <th>Assignment 3</th>
         <th>Assignment 4</th>
         <th>Assignment 5</th>
-        <th>Assignment Average</th>
+        <th>Assignment Average <span id="agt">[%]</span></th>
     </tr>
 </table>
+<button id="cgt">Change Grade Type</button>
 
 
 </body>
