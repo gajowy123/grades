@@ -6,14 +6,26 @@
             border: 1px solid;
             border-collapse: collapse;
         }
+        .ini{
+            justify-content: center;
+            background-color: red;
+        }
+        input{
+            text-align: right;
+        }
 
     </style>
-    <script src="scripts.js"></script>
+    
 </head>
 <body>
-    <h2> NEW TABLE
-        <button type="button" id="nstu"> new student</button>
-    </h2>
+    <h2> NEW TABLE</h2>
+    <button type="button" id="nstu"> new student</button>
+    <form>
+        <label for="name">Student Name:</label><br>
+        <input type="text" id="name" name="name" value="Adam Smith"><br>
+        <label for="id">Student ID:</label><br>
+        <input type="text" id="id" name="id" value="111"><br><br>
+      </form>
 <table id="table1">
     <tr>
         <th>Student Name</th>
@@ -26,7 +38,7 @@
         <th>Assignment Average</th>
     </tr><tr>
         <td>student 1</td>
-        <td>student 1</td>
+        <td><div contenteditable></div></td>
         <td>student 1</td>
         <td>student 1</td>
         <td>student 1</td>
@@ -38,5 +50,5 @@
 
 
 </body>
-
+<script src="scripts.js" type="text/javascript"></script>
 </html>
